@@ -1,78 +1,42 @@
-const data  = {
-    "links": {
-      "self": "http://example.com/articles",
-      "next": "http://example.com/articles?page[offset]=2",
-      "last": "http://example.com/articles?page[offset]=10"
-    },
-    "data": [{
-      "type": "articles",
-      "id": "1",
-      "attributes": {
-        "title": "JSON:API paints my bikeshed!"
-      },
-      "relationships": {
-        "author": {
-          "links": {
-            "self": "http://example.com/articles/1/relationships/author",
-            "related": "http://example.com/articles/1/author"
-          },
-          "data": { "type": "people", "id": "9" }
-        },
-        "comments": {
-          "links": {
-            "self": "http://example.com/articles/1/relationships/comments",
-            "related": "http://example.com/articles/1/comments"
-          },
-          "data": [
-            { "type": "comments", "id": "5" },
-            { "type": "comments", "id": "12" }
-          ]
-        }
-      },
-      "links": {
-        "self": "http://example.com/articles/1"
-      }
-    }],
-    "included": [{
-      "type": "people",
-      "id": "9",
-      "attributes": {
-        "firstName": "Dan",
-        "lastName": "Gebhardt",
-        "twitter": "dgeb"
-      },
-      "links": {
-        "self": "http://example.com/people/9"
-      }
-    }, {
-      "type": "comments",
-      "id": "5",
-      "attributes": {
-        "body": "First!"
-      },
-      "relationships": {
-        "author": {
-          "data": { "type": "people", "id": "2" }
-        }
-      },
-      "links": {
-        "self": "http://example.com/comments/5"
-      }
-    }, {
-      "type": "comments",
-      "id": "12",
-      "attributes": {
-        "body": "I like XML better"
-      },
-      "relationships": {
-        "author": {
-          "data": { "type": "people", "id": "9" }
-        }
-      },
-      "links": {
-        "self": "http://example.com/comments/12"
-      }
-    }]
-  }
-
-module.exports = data
+const data = [
+  {
+    id: 1,
+    name: 'albany sofa',
+    image:
+      'https://dl.airtable.com/.attachments/6ac7f7b55d505057317534722e5a9f03/9183491e/product-3.jpg',
+    price: 39.95,
+    desc: `I'm baby direct trade farm-to-table hell of, YOLO readymade raw denim venmo whatever organic gluten-free kitsch schlitz irony af flexitarian.`,
+  },
+  {
+    id: 2,
+    name: 'entertainment center',
+    image:
+      'https://dl.airtable.com/.attachments/da5e17fd71f50578d525dd5f596e407e/d5e88ac8/product-2.jpg',
+    price: 29.98,
+    desc: `I'm baby direct trade farm-to-table hell of, YOLO readymade raw denim venmo whatever organic gluten-free kitsch schlitz irony af flexitarian.`,
+  },
+  {
+    id: 3,
+    name: 'albany sectional',
+    image:
+      'https://dl.airtable.com/.attachments/05ecddf7ac8d581ecc3f7922415e7907/a4242abc/product-1.jpeg',
+    price: 10.99,
+    desc: `I'm baby direct trade farm-to-table hell of, YOLO readymade raw denim venmo whatever organic gluten-free kitsch schlitz irony af flexitarian.`,
+  },
+  {
+    id: 4,
+    name: 'leather sofa',
+    image:
+      'https://dl.airtable.com/.attachments/3245c726ee77d73702ba8c3310639727/f000842b/product-5.jpg',
+    price: 9.99,
+    desc: `I'm baby direct trade farm-to-table hell of, YOLO readymade raw denim venmo whatever organic gluten-free kitsch schlitz irony af flexitarian.`,
+  },
+]
+const people = [
+  { id: 1, name: 'john' },
+  { id: 2, name: 'peter' },
+  { id: 3, name: 'susan' },
+  { id: 4, name: 'anna' },
+  { id: 5, name: 'emma' },
+]
+module.exports = {data,people}
